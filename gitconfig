@@ -1,0 +1,25 @@
+[color]
+	ui = auto
+	interactive = auto
+	diff = auto
+	pager = false
+
+[diff]
+	renames = copies
+
+[alias]
+	st = status
+	ci = commit
+
+[core]
+	excludesfiles = ~/.gitignore_global
+	autocrlf = input
+
+[branch]
+	autosetuprebase = always
+
+[pager]
+        log = diff-highlight | less
+        show = diff-highlight | less
+        diff = diff-highlight | less
+
