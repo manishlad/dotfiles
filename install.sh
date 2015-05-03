@@ -8,6 +8,7 @@
 
 UNAME=$(uname)
 
+cd $(dirname $0)
 for name in *; do
   if [ ! $name == "README.md" -a ! $name == "install.sh" ]; then
     target="$HOME/.$name"
