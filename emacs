@@ -162,6 +162,10 @@
     ;; GPG Key used for encryption (defaults to nil for symmetric encryption)
     (setq org-crypt-key (if (boundp 'gpg-key-id) gpg-key-id nil)))
 
+  ;; Use gnuplot
+  (use-package gnuplot
+    :ensure t)
+
   :bind
   ("C-c a" . org-agenda)
   ("C-c b" . org-iswitchb)
