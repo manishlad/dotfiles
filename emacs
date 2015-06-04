@@ -134,6 +134,28 @@
   ("M-x" . smex)
   ("M-X" . smex-major-mode-commands))
 
+;; Enable auto-complete
+(use-package auto-complete
+  :ensure t
+  :config
+  (global-auto-complete-mode t))
+
+;; Highlight text that extends beyond a certain column
+(use-package column-enforce-mode
+  :ensure t
+  :config
+  (global-column-enforce-mode t))
+
+;; Draw a line to indicate 80 column mark
+(use-package fill-column-indicator
+  :ensure t
+  :init
+  (define-globalized-minor-mode global-fci-mode fci-mode turn-on-fci-mode)
+  (global-fci-mode t)
+  (setq-default fill-column 80)
+  (setq fci-rule-character ?│)
+  (setq fci-rule-character-color "grey15"))
+
 ;; Enable org-mode
 (use-package org-mode
   :init
@@ -301,6 +323,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(error ((t (:foreground "Red" :weight bold))))
  '(hl-line ((t (:background "gray10"))))
  '(linum ((t (:inherit shadow :background "grey10"))))
  '(trailing-whitespace ((t (:background "grey20"))))
