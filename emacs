@@ -310,6 +310,15 @@
 
 
 ;;
+;; Programming
+;;
+(use-package elpy
+  :ensure t
+  :init
+  (elpy-enable))
+
+
+;;
 ;; Emacs auto-configured items from: M-x customize (DO NOT TOUCH!!!)
 ;;
 (custom-set-variables
