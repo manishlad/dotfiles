@@ -134,6 +134,15 @@
   ("M-x" . smex)
   ("M-X" . smex-major-mode-commands))
 
+;; Enable undo-tree
+(use-package undo-tree
+  :ensure t
+  :init
+  (global-undo-tree-mode t)
+  :bind
+  ("C-z" . undo)
+  ("C-M-Z" . undo-tree-redo))
+
 ;; Enable auto-complete
 (use-package auto-complete
   :ensure t
