@@ -111,6 +111,12 @@
 ;; Always use spaces to indent, no tab
 (set-default 'indent-tabs-mode nil)
 
+;; Scroll one line at a time
+(setq
+  scroll-step 1
+  scroll-conservatively 100000
+  scroll-preserve-screen-position 1)
+
 ;; start the emacs server automatically
 (server-start)
 
