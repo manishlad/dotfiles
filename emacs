@@ -316,6 +316,12 @@
   ("C-c e" . erc-start-or-switch)
   ("C-c E" . erc-stop))
 
+;; Enable google-this
+;; https://github.com/Malabarba/emacs-google-this
+(use-package google-this
+  :ensure t
+  :init
+  (google-this-mode t))
 
 
 ;;
