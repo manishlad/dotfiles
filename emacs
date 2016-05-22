@@ -171,6 +171,38 @@
   (setq fci-rule-character ?│)
   (setq fci-rule-character-color "grey15"))
 
+;; Enable evil-mode
+(use-package evil
+  :ensure t
+  :init
+  (evil-mode t)
+  :config
+  (defun my-esc (prompt)
+    "Evil insert state esc == C-g binding"
+    (cond
+     ;; If we're in an Evil state that defines [escape], return [escape] so that
+     ;; Key Lookup will use it:
+     ((or (evil-insert-state-p) (evil-normal-state-p) (evil-replace-state-p)
+          (evil-visual-state-p)) [escape])
+     (t (kbd "C-g"))))
+
+  ;; Define some useful vim-like key bindings, and bindings to get around annoying
+  ;; terminal <esc> key -> alt-key behaviour:
+  (define-prefix-command 'my-window-map)
+  (global-set-key (kbd "C-w") 'my-window-map)
+  (define-key my-window-map (kbd "<left>") 'windmove-left)
+  (define-key my-window-map (kbd "<right>") 'windmove-right)
+  (define-key my-window-map (kbd "<up>") 'windmove-up)
+  (define-key my-window-map (kbd "<down>") 'windmove-down)
+  (define-key my-window-map (kbd "%") 'split-window-right)
+  (define-key my-window-map (kbd "\"") 'split-window-below)
+  (define-key my-window-map (kbd "RET") 'windresize)
+  (define-key key-translation-map (kbd "C-g") 'my-esc)
+  (define-key evil-operator-state-map (kbd "C-g") 'keyboard-quit)
+  (add-to-list 'evil-emacs-state-modes 'git-rebase-mode)
+  (add-to-list 'evil-emacs-state-modes 'git-commit-mode)
+  )
+
 ;; Enable org-mode
 (use-package org-mode
   :init
@@ -351,7 +383,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(evil-want-C-w-in-emacs-state t)
+)
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
