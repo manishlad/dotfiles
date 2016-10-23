@@ -42,21 +42,24 @@ mkdir -p $VIM_TARGET/autoload $VIM_TARGET/bundle && \
 echo "Installed pathogen.vim"
 
 declare -a vim_plugins=(
-    "https://github.com/sjl/gundo.vim"           # Undo tree
-    "https://github.com/scrooloose/nerdtree"     # NERD tree explorer
-    "https://github.com/jistr/vim-nerdtree-tabs" # NERD tree with tabs
-    "https://github.com/fholgado/minibufexpl.vim"# MinibufExpl
-    "https://github.com/bling/vim-airline"       # Status/tabline
-    "https://github.com/tpope/vim-fugitive"      # Git wrapper
-    "https://github.com/airblade/vim-gitgutter"  # Git gutter
-    "https://github.com/kien/ctrlp.vim"          # Fuzzy file/buffer/tag finder
-    "https://github.com/scrooloose/syntastic"    # Syntax checking
-    "https://github.com/tpope/vim-surround"      # Manage quoting/parentheses
-    "https://github.com/valloric/youcompleteme"  # Code completion
-    "https://github.com/klen/python-mode"        # Python-mode
-    "https://github.com/plasticboy/vim-markdown" # Markdown
-    "https://github.com/pangloss/vim-javascript" # Javascript
-    "https://github.com/elzr/vim-json"           # JSON
+    "https://github.com/sjl/gundo.vim"                # Undo tree
+    "https://github.com/scrooloose/nerdtree"          # NERD tree explorer
+    "https://github.com/jistr/vim-nerdtree-tabs"      # NERD tree with tabs
+    "https://github.com/xuyuanp/nerdtree-git-plugin"  # NERD tree git plugin
+    "https://github.com/fholgado/minibufexpl.vim"     # MinibufExpl
+    "https://github.com/bling/vim-airline"            # Status/tabline
+    "https://github.com/tpope/vim-fugitive"           # Git wrapper
+    "https://github.com/airblade/vim-gitgutter"       # Git gutter
+    "https://github.com/kien/ctrlp.vim"               # Fuzzy file/buffer/tag finder
+    "https://github.com/scrooloose/syntastic"         # Syntax checking
+    "https://github.com/tpope/vim-surround"           # Manage quoting/parentheses
+    "https://github.com/valloric/youcompleteme"       # Code completion
+    "https://github.com/ekalinin/dockerfile.vim"      # Dockerfile syntax
+    "https://github.com/pangloss/vim-javascript"      # Javascript
+    "https://github.com/elzr/vim-json"                # JSON
+    "https://github.com/plasticboy/vim-markdown"      # Markdown
+    "https://github.com/klen/python-mode"             # Python-mode
+    "https://github.com/terryma/vim-multiple-cursors" # Sublime style selection
 )
 
 cd $VIM_TARGET/bundle
