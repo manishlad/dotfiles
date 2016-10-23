@@ -7,18 +7,24 @@ call pathogen#helptags()
 "
 " General Settings
 "
-let mapleader="\,"        " Leader is comma
+let mapleader=" "         " Leader is space
 
 set nocompatible          " Enable all the fancy features
-set term=xterm            " Terminal type
+set term=$TERM            " Terminal type
 set background=dark       " Optimise font colours for dark background
 set mouse=a               " Enable mouse usage (all modes) in terminals
+set textwidth=78          " Wrap line at 78
+set colorcolumn=+2        " Make it obvious where 80 characters is
 set cursorline            " Highlight the current line
+hi cursorline cterm=NONE ctermbg=234
 set ruler                 " Show line and column number
 set showcmd               " Show (partial) command in status line.
 set wildmenu              " Visual autocomplete for command menu
+set wildmode=longest,list " use emacs-style tab completion when selecting files, etc
 set hidden                " Hide buffers when they are abandoned
 " set spell spelllang=en_gb " Spell checking
+
+set list listchars=tab:»·,trail:·,nbsp:· " Display extra whitespace
 
 " Jump directly to the last position when reopening a file
 if has("autocmd")
@@ -35,7 +41,7 @@ set smartcase   " Do smart case matching
 set incsearch   " Incremental search
 set hlsearch    " Highlight all matches
 
-nnoremap <leader><space> :nohlsearch<CR> " Turn off current search highlights
+nnoremap <leader>/ :nohlsearch<CR> " Turn off current search highlights
 
 "
 " Screen Management
@@ -43,12 +49,26 @@ nnoremap <leader><space> :nohlsearch<CR> " Turn off current search highlights
 nnoremap <leader>s :mksession<CR>  " Save session
 nnoremap <leader>S :mksession!<CR> " Overwrite saved session
 
-autocmd vimenter * NERDTree                " Automatically start NERDTree 
-map <Leader>n <plug>NERDTreeTabsToggle<CR> " ,n toggles NERDTree
+nmap <leader>n <plug>NERDTreeTabsToggle<CR> " <space>n toggles NERDTree
 
-" Toggle full buffer height
-map <C-J> <C-W>j<C-W>_
-map <C-K> <C-W>k<C-W>_
+nnoremap <leader>bd :MBEbd<CR>  " :bd style behaviour for MBEbd
+nnoremap <leader><leader> <c-^> " Switch between the last two files
+
+" Use ctrl-[hjkl] to select the active split
+nmap <silent> <C-h> :wincmd h<CR>
+nmap <silent> <C-j> :wincmd j<CR>
+nmap <silent> <C-k> :wincmd k<CR>
+nmap <silent> <C-l> :wincmd l<CR>
+" Use <leader>-[hjkl] to select the active split
+nmap <leader>h :wincmd h<CR>
+nmap <leader>j :wincmd j<CR>
+nmap <leader>k :wincmd k<CR>
+nmap <leader>l :wincmd l<CR>
+" Use <leader> with cursor keys to select the active split
+nmap <leader><left> :wincmd h<CR>
+nmap <leader><down> :wincmd j<CR>
+nmap <leader><up> :wincmd k<CR>
+nmap <leader><right> :wincmd l<CR>
 
 " Fast window resizing with +/_ keys (horizontal); =/- keys (vertical)
 map + <C-W>+
@@ -56,12 +76,12 @@ map _ <C-W>-
 map = <c-w>>
 map - <c-w><
 
-
 "
 " Programming Settings
 "
 syntax on  " Enable syntax highlighting
 set number " Line numbering. Disable with "set nonumber" 
+set numberwidth=5
 
 
 " set autowrite " Automatically save before commands like :next and :make
