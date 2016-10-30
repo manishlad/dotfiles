@@ -59,6 +59,8 @@ export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/s
 
 source $ZSH/oh-my-zsh.sh
 
+PROMPT="%n@%m $PROMPT"
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
