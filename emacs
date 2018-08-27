@@ -175,7 +175,7 @@
 (use-package evil
   :ensure t
   :init
-  (evil-mode t)
+  (evil-mode 0)
   :config
   (defun my-esc (prompt)
     "Evil insert state esc == C-g binding"
