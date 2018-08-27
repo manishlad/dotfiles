@@ -75,7 +75,7 @@
   (puthash "foreground-color" "white" layout-hash)
   (puthash "background-color" "black" layout-hash)
   (puthash "cursor-color" "white" layout-hash)
-  (puthash "font" "Menlo-10" layout-hash))
+  (puthash "font" "dejavu sans mono-10" layout-hash))
 
 (initialise-layout-parameters)
 (if (fboundp 'custom-frame-layout) (custom-frame-layout))
