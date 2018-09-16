@@ -89,7 +89,7 @@ export EDITOR='vim'
 
 # Personal shell environment variables
 if [[ -f $HOME/.shell-env ]]; then
-  source .shell-env
+  source $HOME/.shell-env
 fi
 
 bpython() {
