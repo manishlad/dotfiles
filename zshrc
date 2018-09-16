@@ -102,7 +102,9 @@ bpython() {
   fi
 }
 
+# Use Homebrew curl
+export PATH="/usr/local/opt/curl/bin:$PATH"
+
 # Uncomment this to disable sharing of command history between terminal sessions
 # unsetopt share_history
-
 
