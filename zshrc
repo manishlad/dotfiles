@@ -54,7 +54,7 @@ plugins=(aws brew common-aliases cp docker docker-compose emacs git history hist
 
 # User configuration
 
-export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/X11/bin"
+export PATH="$HOME/bin:/usr/local/opt/python/libexec/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/X11/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -95,7 +95,7 @@ fi
 bpython() {
   if test -n "$VIRTUAL_ENV"
   then
-    PYTHONPATH="$(python -c 'import sys; print ":".join(sys.path)')" \
+    PYTHONPATH="$(python -c 'import sys; print(":".join(sys.path))')" \
     command bpython "$@"
   else
     command bpython "$@"
