@@ -50,7 +50,7 @@ ZSH_THEME="muse"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws brew common-aliases cp docker docker-compose emacs git history history-substring-search pip python rsync sudo tmux vagrant virtualenvwrapper wakeonlan)
+plugins=(common-aliases cp docker docker-compose emacs git history history-substring-search pip python rsync rust rustup sudo tmux virtualenvwrapper)
 
 # User configuration
 
