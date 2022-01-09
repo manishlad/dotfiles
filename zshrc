@@ -87,6 +87,11 @@ export EDITOR='vim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Custom zsh environment variables
+if [[ -f $HOME/.zshenv ]]; then
+  source $HOME/.zshenv
+fi
+
 # Personal shell environment variables
 if [[ -f $HOME/.shell-env ]]; then
   source $HOME/.shell-env
