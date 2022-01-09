@@ -83,6 +83,16 @@ syntax on  " Enable syntax highlighting
 set number " Line numbering. Disable with "set nonumber" 
 set numberwidth=5
 
+" YCM Symbol Search
+nmap <leader>yfw <Plug>(YCMFindSymbolInWorkspace)
+nmap <leader>yfd <Plug>(YCMFindSymbolInDocument)
+
+" YCM GoTo
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
+
+" YCM Autoclose the preview window
+let g:ycm_autoclose_preview_window_after_completion = 1
+
 
 " set autowrite " Automatically save before commands like :next and :make
 
