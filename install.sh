@@ -59,7 +59,7 @@ declare -a vim_plugins=(
     "https://github.com/elzr/vim-json"                # JSON
     "https://github.com/plasticboy/vim-markdown"      # Markdown
     "https://github.com/klen/python-mode"             # Python-mode
-    "https://github.com/terryma/vim-multiple-cursors" # Sublime style selection
+    "https://github.com/mg979/vim-visual-multi"       # Sublime style selection
     "https://github.com/rust-lang/rust.vim.git"       # Rust Syntax
     "https://github.com/majutsushi/tagbar"            # Display tags in window
 )
